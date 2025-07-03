@@ -1,8 +1,8 @@
-import React from 'react';
-import { Code, Palette, Users, Zap } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import React from "react";
+import { Code, Palette, Users, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const About = () => {
   const ref = useRef(null);
@@ -12,23 +12,24 @@ const About = () => {
     {
       icon: <Code className="text-blue-600" size={24} />,
       title: "Clean Code",
-      description: "Writing maintainable, scalable code following best practices"
+      description:
+        "Writing maintainable, scalable code following best practices",
     },
     {
       icon: <Palette className="text-cyan-600" size={24} />,
       title: "UI/UX Design",
-      description: "Creating intuitive and beautiful user interfaces"
+      description: "Creating intuitive and beautiful user interfaces",
     },
     {
       icon: <Users className="text-green-600" size={24} />,
       title: "Collaboration",
-      description: "Working effectively with cross-functional teams"
+      description: "Working effectively with cross-functional teams",
     },
     {
       icon: <Zap className="text-yellow-600" size={24} />,
       title: "Performance",
-      description: "Optimizing applications for speed and efficiency"
-    }
+      description: "Optimizing applications for speed and efficiency",
+    },
   ];
 
   const containerVariants = {
@@ -37,9 +38,9 @@ const About = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -49,9 +50,9 @@ const About = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const cardVariants = {
@@ -62,9 +63,9 @@ const About = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -94,22 +95,28 @@ const About = () => {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              <motion.div variants={itemVariants} className="prose prose-lg text-gray-600 leading-relaxed">
+              <motion.div
+                variants={itemVariants}
+                className="prose prose-lg text-gray-600 leading-relaxed"
+              >
                 <motion.p variants={itemVariants} className="mb-6">
-                  Hi! I'm Alex Chen, a passionate Frontend Developer with over 5 years of experience 
-                  creating digital experiences that users love. I specialize in React, TypeScript, 
-                  and modern CSS frameworks to build responsive, accessible web applications.
+                  Hi! I'm Divyesh Pandav, a passionate Frontend Developer with
+                  over 5 years of experience creating digital experiences that
+                  users love. I specialize in React, TypeScript, and modern CSS
+                  frameworks to build responsive, accessible web applications.
                 </motion.p>
                 <motion.p variants={itemVariants} className="mb-6">
-                  My journey started with a Computer Science degree, but my real passion ignited 
-                  when I discovered the perfect blend of technical problem-solving and creative 
-                  design in frontend development. I believe great software is not just functional, 
+                  My journey started with a Computer Science degree, but my real
+                  passion ignited when I discovered the perfect blend of
+                  technical problem-solving and creative design in frontend
+                  development. I believe great software is not just functional,
                   but delightful to use.
                 </motion.p>
                 <motion.p variants={itemVariants}>
-                  When I'm not coding, you'll find me exploring new design trends, contributing to 
-                  open-source projects, or sharing knowledge through tech meetups and mentoring 
-                  junior developers.
+                  When I'm not coding, you'll find me exploring new design
+                  trends, contributing to open-source projects, or sharing
+                  knowledge through tech meetups and mentoring junior
+                  developers.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -124,10 +131,10 @@ const About = () => {
                 <motion.div
                   key={index}
                   variants={cardVariants}
-                  whileHover={{ 
+                  whileHover={{
                     y: -8,
                     scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
                   }}
                   className="group p-6 bg-gray-50 rounded-xl hover:bg-white transition-all duration-300 cursor-pointer"
                 >

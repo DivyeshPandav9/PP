@@ -508,7 +508,9 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full font-semibold transition-all duration-300 flex items-center gap-3 shadow-2xl overflow-hidden"
               >
-                <span className="relative z-10">Explore My Work</span>
+                <span className="relative z-10 text-nowrap">
+                  Explore My Work
+                </span>
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -533,7 +535,7 @@ const Hero = () => {
                   borderColor: "rgba(255,255,255,0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-white/20 text-white rounded-full font-semibold transition-all duration-300 flex items-center gap-3 backdrop-blur-sm hover:backdrop-blur-md"
+                className="px-8 py-4 text-nowrap border-2 border-white/20 text-white rounded-full font-semibold transition-all duration-300 flex items-center gap-3 backdrop-blur-sm hover:backdrop-blur-md"
               >
                 <Download size={20} />
                 Download Resume

@@ -1,12 +1,12 @@
-import React from 'react';
-import { Heart } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Heart } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -22,16 +22,16 @@ const Footer = () => {
           >
             <motion.button
               onClick={scrollToTop}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                backgroundImage: "linear-gradient(to right, #60a5fa, #34d399)"
+                backgroundImage: "linear-gradient(to right, #60a5fa, #34d399)",
               }}
               whileTap={{ scale: 0.95 }}
               className="inline-block text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-6 transition-all duration-200"
             >
-              Alex Chen
+              Divyesh Pandav
             </motion.button>
-            
+
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -39,10 +39,11 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
             >
-              Frontend Developer passionate about creating beautiful, functional, and user-centric web experiences. 
-              Always learning, always building, always improving.
+              Frontend Developer passionate about creating beautiful,
+              functional, and user-centric web experiences. Always learning,
+              always building, always improving.
             </motion.p>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -52,21 +53,21 @@ const Footer = () => {
             >
               <span>Made with</span>
               <motion.div
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 5, -5, 0]
+                animate={{
+                  scale: [1, 2, 1],
+                  rotate: [0, 5, -5, 0],
                 }}
-                transition={{ 
+                transition={{
                   duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
               >
                 <Heart className="text-red-500" size={16} />
               </motion.div>
-              <span>by Alex Chen © {currentYear}</span>
+              <span>by Divyesh Pandav © {currentYear}</span>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -74,7 +75,9 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-sm text-gray-500"
             >
-              <p>Built with React, TypeScript, Tailwind CSS, and Framer Motion</p>
+              <p>
+                Built with React, TypeScript, Tailwind CSS, and Framer Motion
+              </p>
             </motion.div>
           </motion.div>
         </div>
