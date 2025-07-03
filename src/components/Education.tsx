@@ -189,7 +189,7 @@ const Education = () => {
                       index % 2 === 0
                         ? "lg:mr-auto lg:pr-8"
                         : "lg:ml-auto lg:pl-8"
-                    } ml-12 sm:ml-16 lg:ml-0 mr-4 sm:mr-6 lg:mr-0`}
+                    } sm:ml-16 lg:ml-0 mr-4 sm:mr-6 lg:mr-0`}
                   >
                     <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-2xl">
                       {/* Type Badge */}
