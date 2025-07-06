@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Code, Palette, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";

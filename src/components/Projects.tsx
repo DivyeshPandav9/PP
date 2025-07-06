@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { ExternalLink, Github, ArrowRight, X, Filter } from 'lucide-react';
+import  { useState, useRef } from 'react';
+import { ExternalLink, Github, ArrowRight, X } from 'lucide-react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 const Projects = () => {
@@ -249,7 +249,7 @@ const Projects = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             <AnimatePresence mode="wait">
-              {filteredProjects.map((project, index) => (
+              {filteredProjects.map((project) => (
                 <motion.div
                   key={project.id}
                   variants={cardVariants}
