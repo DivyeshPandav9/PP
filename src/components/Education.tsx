@@ -1,4 +1,4 @@
-import React from "react";
+
 import { GraduationCap, Calendar, Award, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -82,7 +82,7 @@ const Education = () => {
     visible: {
       height: "100%",
       transition: {
-        duration: 1.5,
+        duration: 3,
         ease: "easeOut",
         delay: 0.5,
       },

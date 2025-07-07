@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useRef } from "react";
 import {
   ArrowRight,
   Download,
@@ -15,15 +15,10 @@ import {
   useScroll,
   useTransform,
   useSpring,
-  useMotionValue,
 } from "framer-motion";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
-import type { Container, Engine } from "tsparticles-engine";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -36,42 +31,6 @@ const Hero = () => {
 
   const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
   const ySpring = useSpring(y, springConfig);
-
-  // Mouse tracking for parallax effects
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const handleMouseMove = useCallback(
-    (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-
-      const x = (clientX - innerWidth / 2) / innerWidth;
-      const y = (clientY - innerHeight / 2) / innerHeight;
-
-      mouseX.set(x);
-      mouseY.set(y);
-    },
-    [mouseX, mouseY]
-  );
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    setIsLoaded(true);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [handleMouseMove]);
-
-  // Particles configuration
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      // Particles loaded
-    },
-    []
-  );
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -171,85 +130,6 @@ const Hero = () => {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-800"
     >
-      {/* Particles Background */}
-      <div className="absolute inset-0 z-0">
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={{
-            background: {
-              color: {
-                value: "transparent",
-              },
-            },
-            fpsLimit: 120,
-            interactivity: {
-              events: {
-                onClick: {
-                  enable: false,
-                  mode: "push",
-                },
-                onHover: {
-                  enable: true,
-                  mode: "repulse",
-                },
-                resize: true,
-              },
-              modes: {
-                push: {
-                  quantity: 4,
-                },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4,
-                },
-              },
-            },
-            particles: {
-              color: {
-                value: ["#3B82F6", "#06B6D4", "#8B5CF6", "#10B981"],
-              },
-              links: {
-                color: "#ffffff",
-                distance: 150,
-                enable: true,
-                opacity: 0.1,
-                width: 1,
-              },
-              move: {
-                direction: "none",
-                enable: true,
-                outModes: {
-                  default: "bounce",
-                },
-                random: false,
-                speed: 1,
-                straight: false,
-              },
-              number: {
-                density: {
-                  enable: true,
-                  area: 800,
-                },
-                value: 80,
-              },
-              opacity: {
-                value: 0.3,
-              },
-              shape: {
-                type: "circle",
-              },
-              size: {
-                value: { min: 1, max: 3 },
-              },
-            },
-            detectRetina: true,
-          }}
-          className="absolute inset-0"
-        />
-      </div>
-
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-1">
         {/* Dynamic Gradient Orbs */}
@@ -317,7 +197,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.3, rotate: -20 }}
           animate={{
-            opacity: isLoaded ? 0.08 : 0,
+            opacity:  0,
             scale: 1,
             rotate: 0,
           }}
@@ -399,7 +279,7 @@ const Hero = () => {
             {/* Greeting */}
             <motion.div
               variants={itemVariants}
-              className="mb-6 overflow-hidden"
+              className="mb-6 overflow-hidden hidden md:block"
             >
               <motion.span
                 initial={{ opacity: 0, x: -50 }}
@@ -426,7 +306,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="block"
+                  className="block md:inline"
                 >
                   Divyesh
                 </motion.span>
@@ -434,7 +314,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.7 }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400"
+                  className="block md:inline text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400"
                 >
                   Pandav
                 </motion.span>
@@ -442,7 +322,7 @@ const Hero = () => {
             </div>
 
             {/* Subtitle */}
-            <div className="mb-6 overflow-hidden">
+            <div className="mb-6 overflow-hidden hidden md:block">
               <motion.div
                 variants={textVariants}
                 transition={{ delay: 0.9 }}
@@ -697,7 +577,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

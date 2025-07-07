@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Briefcase, Calendar, MapPin, ExternalLink, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
