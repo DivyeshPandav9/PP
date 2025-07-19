@@ -82,17 +82,17 @@ const Skills = () => {
       className="mb-6"
     >
       <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-700 font-medium">{skill.name}</span>
+        <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
         <motion.span
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: (categoryIndex * 6 + index) * 0.1 + 0.3 }}
-          className="text-gray-500 text-sm"
+          className="text-gray-500 dark:text-gray-400 text-sm"
         >
           {skill.level}%
         </motion.span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
         <motion.div
           className={`h-2 rounded-full ${skill.color}`}
           initial={{ width: 0 }}
@@ -108,7 +108,7 @@ const Skills = () => {
   );
 
   return (
-    <section id="skills" className="py-20 bg-white" ref={ref}>
+    <section id="skills" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-500" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -117,20 +117,20 @@ const Skills = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Skills & Expertise
             </h2>
             <motion.div
               initial={{ width: 0 }}
               animate={isInView ? { width: 96 } : { width: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mb-8"
+              className="h-1 bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 mx-auto mb-8"
             />
             <motion.p
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
             >
               I continuously evolve my skill set to stay current with the latest technologies and best practices in frontend development.
             </motion.p>
@@ -150,13 +150,13 @@ const Skills = () => {
                   y: -5,
                   boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
                 }}
-                className="bg-gray-50 rounded-2xl p-8 transition-all duration-300"
+                className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 transition-all duration-300 border border-gray-100 dark:border-gray-700"
               >
                 <motion.h3
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-                  className="text-2xl font-bold text-gray-900 mb-8 text-center"
+                  className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center"
                 >
                   {category.title}
                 </motion.h3>
@@ -182,10 +182,10 @@ const Skills = () => {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: "5+", label: "Years Experience", color: "text-blue-600" },
-                { value: "50+", label: "Projects Completed", color: "text-cyan-600" },
-                { value: "20+", label: "Happy Clients", color: "text-green-600" },
-                { value: "10+", label: "Technologies", color: "text-yellow-600" }
+                { value: "5+", label: "Years Experience", color: "text-blue-600 dark:text-blue-400" },
+                { value: "50+", label: "Projects Completed", color: "text-cyan-600 dark:text-cyan-400" },
+                { value: "20+", label: "Happy Clients", color: "text-green-600 dark:text-green-400" },
+                { value: "10+", label: "Technologies", color: "text-yellow-600 dark:text-yellow-400" }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -201,7 +201,7 @@ const Skills = () => {
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-gray-600">{stat.label}</div>
+                  <div className="text-gray-600 dark:text-gray-400">{stat.label}</div>
                 </motion.div>
               ))}
             </div>

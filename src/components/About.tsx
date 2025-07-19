@@ -1,8 +1,7 @@
-
-import { Code, Palette, Users, Zap } from "lucide-react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { Code, Palette, Users, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const About = () => {
   const ref = useRef(null);
@@ -10,26 +9,25 @@ const About = () => {
 
   const highlights = [
     {
-      icon: <Code className="text-blue-600" size={24} />,
+      icon: <Code className="text-blue-600 dark:text-blue-400" size={24} />,
       title: "Clean Code",
-      description:
-        "Writing maintainable, scalable code following best practices",
+      description: "Writing maintainable, scalable code following best practices"
     },
     {
-      icon: <Palette className="text-cyan-600" size={24} />,
+      icon: <Palette className="text-cyan-600 dark:text-cyan-400" size={24} />,
       title: "UI/UX Design",
-      description: "Creating intuitive and beautiful user interfaces",
+      description: "Creating intuitive and beautiful user interfaces"
     },
     {
-      icon: <Users className="text-green-600" size={24} />,
+      icon: <Users className="text-green-600 dark:text-green-400" size={24} />,
       title: "Collaboration",
-      description: "Working effectively with cross-functional teams",
+      description: "Working effectively with cross-functional teams"
     },
     {
-      icon: <Zap className="text-yellow-600" size={24} />,
+      icon: <Zap className="text-yellow-600 dark:text-yellow-400" size={24} />,
       title: "Performance",
-      description: "Optimizing applications for speed and efficiency",
-    },
+      description: "Optimizing applications for speed and efficiency"
+    }
   ];
 
   const containerVariants = {
@@ -38,9 +36,9 @@ const About = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
+        staggerChildren: 0.2
+      }
+    }
   };
 
   const itemVariants = {
@@ -50,9 +48,9 @@ const About = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
-      },
-    },
+        ease: "easeOut"
+      }
+    }
   };
 
   const cardVariants = {
@@ -63,13 +61,13 @@ const About = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
-      },
-    },
+        ease: "easeOut"
+      }
+    }
   };
 
   return (
-    <section id="about" className="py-20 bg-white" ref={ref}>
+    <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-500" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -78,14 +76,14 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               About Me
             </h2>
             <motion.div
               initial={{ width: 0 }}
               animate={isInView ? { width: 96 } : { width: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mb-8"
+              className="h-1 bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 mx-auto mb-8"
             />
           </motion.div>
 
@@ -95,10 +93,7 @@ const About = () => {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              <motion.div
-                variants={itemVariants}
-                className="prose prose-lg text-gray-600 leading-relaxed"
-              >
+              <motion.div variants={itemVariants} className="prose prose-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                 <motion.p variants={itemVariants} className="mb-6">
                   Hi! I'm Divyesh Pandav, a passionate Frontend Developer with
                   over 5 years of experience creating digital experiences that
@@ -136,7 +131,7 @@ const About = () => {
                     scale: 1.02,
                     boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
                   }}
-                  className="group p-6 bg-gray-50 rounded-xl hover:bg-white transition-all duration-300 cursor-pointer"
+                  className="group p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 cursor-pointer border border-gray-100 dark:border-gray-700"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
@@ -144,10 +139,10 @@ const About = () => {
                   >
                     {item.icon}
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </motion.div>

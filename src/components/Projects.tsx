@@ -157,33 +157,33 @@ const Projects = () => {
 
   const getTechColor = (tech: string) => {
     const colors: { [key: string]: string } = {
-      'React': 'bg-blue-50 text-blue-700 border-blue-200',
-      'TypeScript': 'bg-blue-50 text-blue-800 border-blue-200',
-      'JavaScript': 'bg-yellow-50 text-yellow-800 border-yellow-200',
-      'Vue.js': 'bg-green-50 text-green-700 border-green-200',
-      'Next.js': 'bg-gray-50 text-gray-800 border-gray-200',
-      'Tailwind CSS': 'bg-cyan-50 text-cyan-700 border-cyan-200',
-      'Node.js': 'bg-green-50 text-green-800 border-green-200',
-      'Express': 'bg-gray-50 text-gray-700 border-gray-200',
-      'MongoDB': 'bg-green-50 text-green-700 border-green-200',
-      'PostgreSQL': 'bg-blue-50 text-blue-700 border-blue-200',
-      'Firebase': 'bg-orange-50 text-orange-700 border-orange-200',
-      'React Native': 'bg-blue-50 text-blue-700 border-blue-200',
-      'Redux': 'bg-purple-50 text-purple-700 border-purple-200',
-      'Socket.io': 'bg-gray-50 text-gray-700 border-gray-200',
-      'Chart.js': 'bg-pink-50 text-pink-700 border-pink-200',
-      'OpenWeather API': 'bg-blue-50 text-blue-600 border-blue-200',
-      'CSS3': 'bg-blue-50 text-blue-600 border-blue-200',
-      'Framer Motion': 'bg-purple-50 text-purple-700 border-purple-200',
-      'Vite': 'bg-yellow-50 text-yellow-700 border-yellow-200',
-      'Stripe': 'bg-indigo-50 text-indigo-700 border-indigo-200',
-      'Prisma': 'bg-gray-50 text-gray-700 border-gray-200'
+      'React': 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700',
+      'TypeScript': 'bg-blue-50 text-blue-800 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700',
+      'JavaScript': 'bg-yellow-50 text-yellow-800 border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-300 dark:border-yellow-700',
+      'Vue.js': 'bg-green-50 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-700',
+      'Next.js': 'bg-gray-50 text-gray-800 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600',
+      'Tailwind CSS': 'bg-cyan-50 text-cyan-700 border-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-300 dark:border-cyan-700',
+      'Node.js': 'bg-green-50 text-green-800 border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-700',
+      'Express': 'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600',
+      'MongoDB': 'bg-green-50 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-700',
+      'PostgreSQL': 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700',
+      'Firebase': 'bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-900/30 dark:text-orange-300 dark:border-orange-700',
+      'React Native': 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700',
+      'Redux': 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-700',
+      'Socket.io': 'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600',
+      'Chart.js': 'bg-pink-50 text-pink-700 border-pink-200 dark:bg-pink-900/30 dark:text-pink-300 dark:border-pink-700',
+      'OpenWeather API': 'bg-blue-50 text-blue-600 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700',
+      'CSS3': 'bg-blue-50 text-blue-600 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-700',
+      'Framer Motion': 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-700',
+      'Vite': 'bg-yellow-50 text-yellow-700 border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-300 dark:border-yellow-700',
+      'Stripe': 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-700',
+      'Prisma': 'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600'
     };
-    return colors[tech] || 'bg-gray-50 text-gray-700 border-gray-200';
+    return colors[tech] || 'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600';
   };
 
   return (
-    <section id="projects" className="py-24 bg-gray-50/50" ref={ref}>
+    <section id="projects" className="py-24 bg-gray-50/50 dark:bg-gray-800/50 transition-colors duration-500" ref={ref}>
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -194,7 +194,7 @@ const Projects = () => {
             className="text-center mb-16"
           >
             <motion.h2 
-              className="text-5xl md:text-6xl font-semibold text-gray-900 mb-6 tracking-tight"
+              className="text-5xl md:text-6xl font-semibold text-gray-900 dark:text-white mb-6 tracking-tight"
               style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
             >
               Featured Projects
@@ -203,13 +203,13 @@ const Projects = () => {
               initial={{ width: 0 }}
               animate={isInView ? { width: 80 } : { width: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              className="h-0.5 bg-gray-900 mx-auto mb-8"
+              className="h-0.5 bg-gray-900 dark:bg-white mx-auto mb-8"
             />
             <motion.p
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
+              className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed"
               style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
             >
               A collection of projects that showcase my passion for creating exceptional digital experiences.
@@ -231,8 +231,8 @@ const Projects = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${
                   activeFilter === category
-                    ? 'bg-gray-900 text-white border-gray-900 shadow-lg'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                    ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white shadow-lg'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
                 }`}
                 style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
               >
@@ -261,7 +261,7 @@ const Projects = () => {
                     y: -8,
                     transition: { duration: 0.3, ease: "easeOut" }
                   }}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100"
+                  className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100 dark:border-gray-700"
                   onClick={() => setSelectedProject(project)}
                 >
                   {/* Project Image */}
@@ -312,12 +312,12 @@ const Projects = () => {
                   {/* Project Content */}
                   <div className="p-6">
                     <motion.h3
-                      className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors duration-200"
+                      className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200"
                       style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
                     >
                       {project.title}
                     </motion.h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
                       {project.description}
                     </p>
                     
@@ -335,7 +335,7 @@ const Projects = () => {
                         </motion.span>
                       ))}
                       {project.technologies.length > 3 && (
-                        <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-50 text-gray-600 border border-gray-200">
+                        <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">
                           +{project.technologies.length - 3}
                         </span>
                       )}
@@ -362,7 +362,7 @@ const Projects = () => {
                 boxShadow: "0 10px 40px rgba(0,0,0,0.15)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 font-medium shadow-lg"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg"
               style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
             >
               View All Projects
@@ -387,7 +387,7 @@ const Projects = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              className="bg-white dark:bg-gray-900 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
@@ -408,12 +408,12 @@ const Projects = () => {
               
               <div className="p-8 md:p-10">
                 <motion.h3 
-                  className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6"
+                  className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-6"
                   style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
                 >
                   {selectedProject.title}
                 </motion.h3>
-                <p className="text-gray-600 mb-8 leading-relaxed text-lg">
+                <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-lg">
                   {selectedProject.fullDescription}
                 </p>
                 
@@ -436,7 +436,7 @@ const Projects = () => {
                     href={selectedProject.liveUrl}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex items-center justify-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-200 font-medium shadow-lg"
+                    className="flex items-center justify-center gap-3 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-200 font-medium shadow-lg"
                   >
                     <ExternalLink size={20} />
                     View Live Project
@@ -445,7 +445,7 @@ const Projects = () => {
                     href={selectedProject.githubUrl}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex items-center justify-center gap-3 px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 font-medium"
+                    className="flex items-center justify-center gap-3 px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium"
                   >
                     <Github size={20} />
                     View Source Code
