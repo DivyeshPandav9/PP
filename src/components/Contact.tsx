@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import Swal from "sweetalert2";
 
 const Contact = () => {
@@ -91,19 +99,19 @@ const Contact = () => {
       icon: <Github size={24} />,
       href: "https://github.com",
       label: "GitHub",
-      color: "hover:text-gray-900 dark:hover:text-gray-300"
+      color: "hover:text-gray-900 dark:hover:text-gray-300",
     },
     {
       icon: <Linkedin size={24} />,
       href: "https://linkedin.com",
       label: "LinkedIn",
-      color: "hover:text-blue-600 dark:hover:text-blue-400"
+      color: "hover:text-blue-600 dark:hover:text-blue-400",
     },
     {
       icon: <Mail size={24} />,
       href: "mailto:you@example.com",
       label: "Email",
-      color: "hover:text-red-500",
+      color: "hover:text-red-500 dark:hover:text-blue-400",
     },
   ];
   const containerVariants = {
@@ -130,7 +138,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-500" ref={ref}>
+    <section
+      id="contact"
+      className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-500"
+      ref={ref}
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -172,13 +184,16 @@ const Contact = () => {
               whileHover={{ y: -5 }}
               className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700"
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                Send a Message
+              </h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <motion.div
-                    whileFocus={{ scale: 1.02 }}
-                  >
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <motion.div whileFocus={{ scale: 1.02 }}>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
                       Full Name
                     </label>
                     <input
@@ -192,10 +207,11 @@ const Contact = () => {
                       placeholder="Your full name"
                     />
                   </motion.div>
-                  <motion.div
-                    whileFocus={{ scale: 1.02 }}
-                  >
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <motion.div whileFocus={{ scale: 1.02 }}>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >
                       Email Address
                     </label>
                     <input
@@ -210,11 +226,12 @@ const Contact = () => {
                     />
                   </motion.div>
                 </div>
-                
-                <motion.div
-                  whileFocus={{ scale: 1.02 }}
-                >
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+
+                <motion.div whileFocus={{ scale: 1.02 }}>
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Subject
                   </label>
                   <input
@@ -228,11 +245,12 @@ const Contact = () => {
                     placeholder="What's this about?"
                   />
                 </motion.div>
-                
-                <motion.div
-                  whileFocus={{ scale: 1.02 }}
-                >
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+
+                <motion.div whileFocus={{ scale: 1.02 }}>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Message
                   </label>
                   <textarea
@@ -275,13 +293,18 @@ const Contact = () => {
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700"
               >
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Contact Information
+                </h3>
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <motion.a
                       key={index}
                       href={info.link}
-                      whileHover={{ x: 5, backgroundColor: "rgba(59, 130, 246, 0.05)" }}
+                      whileHover={{
+                        x: 5,
+                        backgroundColor: "rgba(59, 130, 246, 0.05)",
+                      }}
                       className="flex items-center gap-4 p-4 rounded-lg transition-all duration-200 group"
                     >
                       <motion.div
@@ -291,7 +314,9 @@ const Contact = () => {
                         {info.icon}
                       </motion.div>
                       <div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">{info.title}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                          {info.title}
+                        </div>
                         <div className="text-gray-900 dark:text-white font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                           {info.value}
                         </div>
@@ -306,7 +331,9 @@ const Contact = () => {
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700"
               >
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Follow Me</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Follow Me
+                </h3>
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -314,10 +341,10 @@ const Contact = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.1,
                         rotate: 5,
-                        backgroundColor: "rgba(59, 130, 246, 0.1)"
+                        backgroundColor: "rgba(59, 130, 246, 0.1)",
                       }}
                       whileTap={{ scale: 0.95 }}
                       className={`p-4 bg-gray-100 dark:bg-gray-800 rounded-lg transition-all duration-200 ${social.color} border border-gray-200 dark:border-gray-700`}
@@ -334,10 +361,12 @@ const Contact = () => {
             variants={itemVariants}
             whileHover={{ y: -5, scale: 1.02 }}
             // className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl shadow-lg p-8 text-white mt-10"
-            className="bg-white dark:from-blue-500 dark:to-cyan-500 rounded-2xl shadow-lg p-8 text-gray-900 mt-10"
+            className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-8 text-gray-900 mt-10"
           >
-            <h3 className="text-2xl font-bold mb-4">Let's Work Together</h3>
-            <p className="text-blue-100 dark:text-blue-50 leading-relaxed">
+            <h3 className="dark:text-white text-2xl font-bold mb-4">
+              Let's Work Together
+            </h3>
+            <p className="text-gray-900 dark:text-blue-50 leading-relaxed">
               I'm always excited to work on new projects and collaborate with
               amazing people. Whether you have a project in mind or just want to
               chat, feel free to reach out!

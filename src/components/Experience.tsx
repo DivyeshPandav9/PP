@@ -400,7 +400,7 @@ const Experience = () => {
                 boxShadow: "0 10px 40px rgba(0,0,0,0.15)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white-900 dark:bg-gray-900 text-white dark:text-gray-900 rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 font-medium shadow-lg"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white-900 dark:bg-gray-900 dark:text-white text-gray-900 rounded-full transition-all duration-300 font-medium shadow-lg"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
