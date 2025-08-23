@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Skills = () => {
   const ref = useRef(null);
@@ -16,15 +16,33 @@ const Skills = () => {
 
   const skillCategories = [
     {
+      title: "Core Skills",
+      skills: [
+        { name: "JavaScript (ES6+)", level: 95, color: "bg-yellow-500" },
+        { name: "TypeScript", level: 90, color: "bg-blue-600" },
+        { name: "HTML5 & CSS3", level: 98, color: "bg-orange-500" },
+      ],
+    },
+    {
       title: "Frontend Technologies",
       skills: [
         { name: "React", level: 95, color: "bg-blue-500" },
-        { name: "TypeScript", level: 90, color: "bg-blue-600" },
-        { name: "JavaScript (ES6+)", level: 95, color: "bg-yellow-500" },
-        { name: "HTML5 & CSS3", level: 98, color: "bg-orange-500" },
+        { name: "Next.js", level: 85, color: "bg-gray-800" },
         { name: "Tailwind CSS", level: 92, color: "bg-cyan-500" },
-        { name: "Next.js", level: 85, color: "bg-gray-800" }
-      ]
+        { name: "Material UI (MUI)", level: 88, color: "bg-indigo-500" },
+        { name: "React Query", level: 85, color: "bg-pink-500" },
+        { name: "Redux", level: 87, color: "bg-purple-600" },
+      ],
+    },
+    {
+      title: "Backend Technologies",
+      skills: [
+        { name: "Fastify", level: 80, color: "bg-green-600" },
+        { name: "Express.js", level: 85, color: "bg-gray-700" },
+        { name: "TypeBox", level: 75, color: "bg-blue-400" },
+        { name: "Kysely", level: 78, color: "bg-teal-500" },
+        { name: "PostgreSQL", level: 82, color: "bg-sky-600" },
+      ],
     },
     {
       title: "Tools & Platforms",
@@ -34,9 +52,9 @@ const Skills = () => {
         { name: "Docker", level: 75, color: "bg-blue-400" },
         { name: "AWS/Vercel", level: 70, color: "bg-orange-400" },
         { name: "Figma", level: 85, color: "bg-purple-500" },
-        { name: "Jest/Testing", level: 80, color: "bg-red-500" }
-      ]
-    }
+        { name: "Jest/Testing", level: 80, color: "bg-red-500" },
+      ],
+    },
   ];
 
   const containerVariants = {
@@ -45,9 +63,9 @@ const Skills = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const cardVariants = {
@@ -57,9 +75,9 @@ const Skills = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const statVariants = {
@@ -69,12 +87,20 @@ const Skills = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
-  const SkillBar = ({ skill, index, categoryIndex }: { skill: any, index: number, categoryIndex: number }) => (
+  const SkillBar = ({
+    skill,
+    index,
+    categoryIndex,
+  }: {
+    skill: any;
+    index: number;
+    categoryIndex: number;
+  }) => (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -82,11 +108,16 @@ const Skills = () => {
       className="mb-6"
     >
       <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
+        <span className="text-gray-700 dark:text-gray-300 font-medium">
+          {skill.name}
+        </span>
         <motion.span
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: (categoryIndex * 6 + index) * 0.1 + 0.3 }}
+          transition={{
+            duration: 0.6,
+            delay: (categoryIndex * 6 + index) * 0.1 + 0.3,
+          }}
           className="text-gray-500 dark:text-gray-400 text-sm"
         >
           {skill.level}%
@@ -100,7 +131,7 @@ const Skills = () => {
           transition={{
             duration: 1.2,
             delay: (categoryIndex * 6 + index) * 0.1,
-            ease: "easeOut"
+            ease: "easeOut",
           }}
         />
       </div>
@@ -108,7 +139,11 @@ const Skills = () => {
   );
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-500" ref={ref}>
+    <section
+      id="skills"
+      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-500"
+      ref={ref}
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -132,7 +167,8 @@ const Skills = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
             >
-              I continuously evolve my skill set to stay current with the latest technologies and best practices in frontend development.
+              I continuously evolve my skill set to stay current with the latest
+              technologies and best practices in frontend development.
             </motion.p>
           </motion.div>
 
@@ -146,15 +182,17 @@ const Skills = () => {
               <motion.div
                 key={categoryIndex}
                 variants={cardVariants}
-                whileHover={{ 
+                whileHover={{
                   y: -5,
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
                 }}
                 className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 transition-all duration-300 border border-gray-100 dark:border-gray-700"
               >
                 <motion.h3
                   initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                  }
                   transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
                   className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center"
                 >
@@ -182,10 +220,26 @@ const Skills = () => {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: "5+", label: "Years Experience", color: "text-blue-600 dark:text-blue-400" },
-                { value: "50+", label: "Projects Completed", color: "text-cyan-600 dark:text-cyan-400" },
-                { value: "20+", label: "Happy Clients", color: "text-green-600 dark:text-green-400" },
-                { value: "10+", label: "Technologies", color: "text-yellow-600 dark:text-yellow-400" }
+                {
+                  value: "5+",
+                  label: "Years Experience",
+                  color: "text-blue-600 dark:text-blue-400",
+                },
+                {
+                  value: "50+",
+                  label: "Projects Completed",
+                  color: "text-cyan-600 dark:text-cyan-400",
+                },
+                {
+                  value: "20+",
+                  label: "Happy Clients",
+                  color: "text-green-600 dark:text-green-400",
+                },
+                {
+                  value: "10+",
+                  label: "Technologies",
+                  color: "text-yellow-600 dark:text-yellow-400",
+                },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -201,7 +255,9 @@ const Skills = () => {
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-gray-600 dark:text-gray-400">{stat.label}</div>
+                  <div className="text-gray-600 dark:text-gray-400">
+                    {stat.label}
+                  </div>
                 </motion.div>
               ))}
             </div>

@@ -80,9 +80,9 @@ const Header = () => {
             className="text-2xl font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
           >
             <img
-              src="images/dp.webp" // Change to your image path
+              src="images/dp.webp"
               alt="Logo"
-              className="h-12 w-12 object-cover rounded-full"
+              className="h-12 w-12 object-cover rounded-full dark:invert"
             />
           </motion.button>
 

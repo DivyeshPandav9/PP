@@ -1,13 +1,30 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { ArrowRight, Download, Github, Linkedin, Mail, Code, Palette, Zap, Monitor, Sparkles } from 'lucide-react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import {
+  ArrowRight,
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  Code,
+  Palette,
+  Zap,
+  Monitor,
+  Sparkles,
+} from "lucide-react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring,
+  useMotionValue,
+} from "framer-motion";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
@@ -25,11 +42,46 @@ const Hero = () => {
 
   // Floating icons data
   const floatingIcons = [
-    { Icon: Code, delay: 0, x: 15, y: 20, size: 24, color: "text-blue-500 dark:text-blue-400" },
-    { Icon: Palette, delay: 1, x: 85, y: 15, size: 20, color: "text-purple-500 dark:text-purple-400" },
-    { Icon: Zap, delay: 2, x: 10, y: 75, size: 28, color: "text-yellow-500 dark:text-yellow-400" },
-    { Icon: Monitor, delay: 1.5, x: 90, y: 80, size: 22, color: "text-green-500 dark:text-green-400" },
-    { Icon: Sparkles, delay: 0.5, x: 75, y: 45, size: 18, color: "text-pink-500 dark:text-pink-400" },
+    {
+      Icon: Code,
+      delay: 0,
+      x: 15,
+      y: 20,
+      size: 24,
+      color: "text-blue-500 dark:text-blue-400",
+    },
+    {
+      Icon: Palette,
+      delay: 1,
+      x: 85,
+      y: 15,
+      size: 20,
+      color: "text-purple-500 dark:text-purple-400",
+    },
+    {
+      Icon: Zap,
+      delay: 2,
+      x: 10,
+      y: 75,
+      size: 28,
+      color: "text-yellow-500 dark:text-yellow-400",
+    },
+    {
+      Icon: Monitor,
+      delay: 1.5,
+      x: 90,
+      y: 80,
+      size: 22,
+      color: "text-green-500 dark:text-green-400",
+    },
+    {
+      Icon: Sparkles,
+      delay: 0.5,
+      x: 75,
+      y: 45,
+      size: 18,
+      color: "text-pink-500 dark:text-pink-400",
+    },
   ];
 
   // Animation variants
@@ -39,16 +91,16 @@ const Hero = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 60,
-      scale: 0.9
+      scale: 0.9,
     },
     visible: {
       opacity: 1,
@@ -56,14 +108,14 @@ const Hero = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
   };
 
   const textVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 100,
     },
     visible: {
@@ -71,16 +123,16 @@ const Hero = () => {
       y: 0,
       transition: {
         duration: 1,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
   };
 
   const buttonVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       scale: 0.8,
-      y: 30
+      y: 30,
     },
     visible: {
       opacity: 1,
@@ -88,14 +140,14 @@ const Hero = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
   };
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-500"
     >
@@ -106,12 +158,12 @@ const Hero = () => {
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
-            opacity: [0.1, 0.2, 0.1]
+            opacity: [0.1, 0.2, 0.1],
           }}
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 dark:from-blue-500/10 dark:to-cyan-500/10 rounded-full blur-3xl"
         />
@@ -119,12 +171,12 @@ const Hero = () => {
           animate={{
             scale: [1, 1.3, 1],
             rotate: [360, 180, 0],
-            opacity: [0.08, 0.15, 0.08]
+            opacity: [0.08, 0.15, 0.08],
           }}
           transition={{
             duration: 25,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
           className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-br from-purple-400/15 to-pink-400/15 dark:from-purple-500/8 dark:to-pink-500/8 rounded-full blur-3xl"
         />
@@ -147,7 +199,7 @@ const Hero = () => {
               duration: 4 + index,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: item.delay
+              delay: item.delay,
             }}
           >
             <item.Icon size={item.size} />
@@ -165,9 +217,9 @@ const Hero = () => {
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-          animate={{ 
-            opacity: isLoaded ? 0.06 : 0, 
-            scale: 1, 
+          animate={{
+            opacity: isLoaded ? 0.06 : 0,
+            scale: 1,
             rotate: 0,
           }}
           transition={{
@@ -193,18 +245,18 @@ const Hero = () => {
               transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
               className="absolute inset-16 rounded-full border border-cyan-200/25 dark:border-cyan-400/18"
             />
-            
+
             {/* Central Pulsing Core */}
             <motion.div
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.1, 0.2, 0.1],
-                rotate: [0, 180, 360]
+                rotate: [0, 180, 360],
               }}
               transition={{
                 duration: 6,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
               className="absolute inset-1/3 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 dark:from-blue-500/15 dark:to-cyan-500/15 rounded-full blur-2xl"
             />
@@ -215,8 +267,8 @@ const Hero = () => {
                 key={i}
                 className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 dark:from-blue-500 dark:to-cyan-500 rounded-full"
                 style={{
-                  top: '50%',
-                  left: '50%',
+                  top: "50%",
+                  left: "50%",
                   transformOrigin: `${80 + i * 25}px 0px`,
                 }}
                 animate={{
@@ -226,7 +278,7 @@ const Hero = () => {
                   duration: 12 + i * 3,
                   repeat: Infinity,
                   ease: "linear",
-                  delay: i * 0.4
+                  delay: i * 0.4,
                 }}
               />
             ))}
@@ -301,7 +353,10 @@ const Hero = () => {
                 variants={textVariants}
                 transition={{ delay: 0.8 }}
                 className="text-xl md:text-2xl lg:text-3xl font-light text-gray-700 dark:text-gray-300 mb-8 tracking-wide"
-                style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
+                style={{
+                  fontFamily:
+                    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                }}
               >
                 <motion.span
                   animate={{
@@ -314,7 +369,7 @@ const Hero = () => {
                   }}
                   className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-600 dark:from-blue-400 dark:via-cyan-400 dark:to-purple-400 bg-[length:200%_auto] bg-clip-text text-transparent font-medium"
                 >
-                  Frontend Developer
+                  Software Developer
                 </motion.span>
                 <span className="block text-gray-600 dark:text-gray-400 text-lg mt-2">
                   & Digital Experience Creator
@@ -328,7 +383,10 @@ const Hero = () => {
                 variants={itemVariants}
                 transition={{ delay: 1 }}
                 className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed font-light"
-                style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
+                style={{
+                  fontFamily:
+                    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                }}
               >
                 Crafting exceptional digital experiences through{" "}
                 <motion.span
@@ -396,24 +454,24 @@ const Hero = () => {
               className="flex items-center gap-6"
             >
               {[
-                { 
-                  icon: Github, 
-                  href: "https://github.com", 
+                {
+                  icon: Github,
+                  href: "https://github.com",
                   label: "GitHub",
-                  color: "hover:text-gray-700 dark:hover:text-gray-300"
+                  color: "hover:text-gray-700 dark:hover:text-gray-300",
                 },
-                { 
-                  icon: Linkedin, 
-                  href: "https://linkedin.com", 
+                {
+                  icon: Linkedin,
+                  href: "https://linkedin.com",
                   label: "LinkedIn",
-                  color: "hover:text-blue-600 dark:hover:text-blue-400"
+                  color: "hover:text-blue-600 dark:hover:text-blue-400",
                 },
-                { 
-                  icon: Mail, 
-                  href: "#contact", 
+                {
+                  icon: Mail,
+                  href: "#contact",
                   label: "Email",
-                  color: "hover:text-cyan-600 dark:hover:text-cyan-400"
-                }
+                  color: "hover:text-cyan-600 dark:hover:text-cyan-400",
+                },
               ].map(({ icon: Icon, href, label, color }, index) => (
                 <motion.a
                   key={index}
@@ -434,8 +492,10 @@ const Hero = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                   className={`p-3 text-gray-500 dark:text-gray-400 ${color} rounded-full transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-md hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600`}
-                  target={href.startsWith('http') ? "_blank" : undefined}
-                  rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    href.startsWith("http") ? "noopener noreferrer" : undefined
+                  }
                   aria-label={label}
                 >
                   <Icon size={24} />
@@ -467,7 +527,9 @@ const Hero = () => {
                   <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 </div>
-                <span className="text-gray-500 dark:text-gray-400 text-sm">portfolio.tsx</span>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">
+                  portfolio.tsx
+                </span>
               </div>
 
               {/* Code Content */}
@@ -478,10 +540,37 @@ const Hero = () => {
                   transition={{ delay: 1.5, duration: 2 }}
                   className="space-y-2"
                 >
-                  <div className="text-purple-600 dark:text-purple-400">const <span className="text-blue-600 dark:text-blue-400">developer</span> = {`{`}</div>
-                  <div className="ml-4 text-gray-700 dark:text-gray-300">name: <span className="text-green-600 dark:text-green-400">'Divyesh Pandav'</span>,</div>
-                  <div className="ml-4 text-gray-700 dark:text-gray-300">skills: [<span className="text-green-600 dark:text-green-400">'React'</span>, <span className="text-green-600 dark:text-green-400">'TypeScript'</span>],</div>
-                  <div className="ml-4 text-gray-700 dark:text-gray-300">passion: <span className="text-green-600 dark:text-green-400">'Creating Amazing UX'</span></div>
+                  <div className="text-purple-600 dark:text-purple-400">
+                    const{" "}
+                    <span className="text-blue-600 dark:text-blue-400">
+                      developer
+                    </span>{" "}
+                    = {`{`}
+                  </div>
+                  <div className="ml-4 text-gray-700 dark:text-gray-300">
+                    name:{" "}
+                    <span className="text-green-600 dark:text-green-400">
+                      'Divyesh Pandav'
+                    </span>
+                    ,
+                  </div>
+                  <div className="ml-4 text-gray-700 dark:text-gray-300">
+                    skills: [
+                    <span className="text-green-600 dark:text-green-400">
+                      'React'
+                    </span>
+                    ,{" "}
+                    <span className="text-green-600 dark:text-green-400">
+                      'TypeScript'
+                    </span>
+                    ],
+                  </div>
+                  <div className="ml-4 text-gray-700 dark:text-gray-300">
+                    passion:{" "}
+                    <span className="text-green-600 dark:text-green-400">
+                      'Creating Amazing UX'
+                    </span>
+                  </div>
                   <div className="text-purple-600 dark:text-purple-400">{`}`}</div>
                 </motion.div>
               </div>
