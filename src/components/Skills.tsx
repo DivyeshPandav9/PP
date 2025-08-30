@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Brain } from "lucide-react";
 
 const Skills = () => {
   const ref = useRef(null);
@@ -15,19 +16,19 @@ const Skills = () => {
   }, [isInView, animatedSkills]);
 
   const skillCategories = [
-    {
-      title: "Core Skills",
-      skills: [
-        { name: "JavaScript (ES6+)", level: 95, color: "bg-yellow-500" },
-        { name: "TypeScript", level: 90, color: "bg-blue-600" },
-        { name: "HTML5 & CSS3", level: 98, color: "bg-orange-500" },
-      ],
-    },
+    // {
+    //   title: "Core Skills",
+    //   skills: [
+    //     { name: "JavaScript (ES6+)", level: 95, color: "bg-yellow-500" },
+    //     { name: "TypeScript", level: 90, color: "bg-blue-600" },
+    //     { name: "HTML5 & CSS3", level: 98, color: "bg-orange-500" },
+    //   ],
+    // },
     {
       title: "Frontend Technologies",
       skills: [
         { name: "React", level: 95, color: "bg-blue-500" },
-        { name: "Next.js", level: 85, color: "bg-gray-800" },
+        { name: "Next.js", level: 85, color: "bg-gray-800 dark:invert" },
         { name: "Tailwind CSS", level: 92, color: "bg-cyan-500" },
         { name: "Material UI (MUI)", level: 88, color: "bg-indigo-500" },
         { name: "React Query", level: 85, color: "bg-pink-500" },
@@ -38,16 +39,17 @@ const Skills = () => {
       title: "Backend Technologies",
       skills: [
         { name: "Fastify", level: 80, color: "bg-green-600" },
-        { name: "Express.js", level: 85, color: "bg-gray-700" },
+        { name: "Express.js", level: 85, color: "bg-gray-700 dark:invert" },
         { name: "TypeBox", level: 75, color: "bg-blue-400" },
         { name: "Kysely", level: 78, color: "bg-teal-500" },
         { name: "PostgreSQL", level: 82, color: "bg-sky-600" },
+        { name: "Sql", level: 78, color: "bg-pink-600" },
       ],
     },
     {
       title: "Tools & Platforms",
       skills: [
-        { name: "Git & GitHub", level: 90, color: "bg-gray-700" },
+        { name: "Git & GitHub", level: 90, color: "bg-gray-700 dark:invert" },
         { name: "Webpack/Vite", level: 80, color: "bg-green-500" },
         { name: "Docker", level: 75, color: "bg-blue-400" },
         { name: "AWS/Vercel", level: 70, color: "bg-orange-400" },
@@ -152,6 +154,16 @@ const Skills = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              animate={
+                isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }
+              }
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 dark:bg-blue-500 rounded-full mb-6"
+            >
+              <Brain className="text-white" size={32} />
+            </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Skills & Expertise
             </h2>
@@ -176,7 +188,7 @@ const Skills = () => {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="grid lg:grid-cols-2 gap-12"
+            className="grid lg:grid-cols-1 gap-12"
           >
             {skillCategories.map((category, categoryIndex) => (
               <motion.div

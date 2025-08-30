@@ -372,7 +372,7 @@ const Hero = () => {
                   Software Developer
                 </motion.span>
                 <span className="block text-gray-600 dark:text-gray-400 text-lg mt-2">
-                  & Digital Experience Creator
+                  & Scalable Systems Builder
                 </span>
               </motion.div>
             </div>
@@ -388,7 +388,7 @@ const Hero = () => {
                     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 }}
               >
-                Crafting exceptional digital experiences through{" "}
+                Transforming ideas into robust applications with{" "}
                 <motion.span
                   whileHover={{ color: "#60A5FA" }}
                   className="text-blue-600 dark:text-blue-400 cursor-default"
@@ -528,7 +528,7 @@ const Hero = () => {
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                 </div>
                 <span className="text-gray-500 dark:text-gray-400 text-sm">
-                  portfolio.tsx
+                  portfolio.js
                 </span>
               </div>
 
@@ -543,7 +543,7 @@ const Hero = () => {
                   <div className="text-purple-600 dark:text-purple-400">
                     const{" "}
                     <span className="text-blue-600 dark:text-blue-400">
-                      developer
+                      softwareDeveloper
                     </span>{" "}
                     = {`{`}
                   </div>
@@ -557,7 +557,7 @@ const Hero = () => {
                   <div className="ml-4 text-gray-700 dark:text-gray-300">
                     skills: [
                     <span className="text-green-600 dark:text-green-400">
-                      'React'
+                      'JavaScript'
                     </span>
                     ,{" "}
                     <span className="text-green-600 dark:text-green-400">
@@ -568,7 +568,7 @@ const Hero = () => {
                   <div className="ml-4 text-gray-700 dark:text-gray-300">
                     passion:{" "}
                     <span className="text-green-600 dark:text-green-400">
-                      'Creating Amazing UX'
+                      'Developing Modern Web Apps'
                     </span>
                   </div>
                   <div className="text-purple-600 dark:text-purple-400">{`}`}</div>
