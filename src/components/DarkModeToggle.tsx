@@ -1,20 +1,23 @@
-import React from 'react';
-import { Sun, Moon } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Sun, Moon } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface DarkModeToggleProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
 }
 
-const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ isDarkMode, toggleDarkMode }) => {
+const DarkModeToggle: React.FC<DarkModeToggleProps> = ({
+  isDarkMode,
+  toggleDarkMode,
+}) => {
   return (
     <motion.button
       onClick={toggleDarkMode}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className="relative p-3 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-      aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+      aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
       <motion.div
         initial={false}
@@ -27,7 +30,7 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ isDarkMode, toggleDarkM
       >
         <Sun size={20} className="text-yellow-500" />
       </motion.div>
-      
+
       <motion.div
         initial={false}
         animate={{
@@ -39,7 +42,7 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ isDarkMode, toggleDarkM
       >
         <Moon size={20} className="text-blue-400" />
       </motion.div>
-      
+
       {/* Invisible placeholder to maintain button size */}
       <div className="w-5 h-5 opacity-0">
         <Sun size={20} />

@@ -1,4 +1,3 @@
-
 import { GraduationCap, Calendar, Award, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -90,7 +89,11 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-500" ref={ref}>
+    <section
+      id="education"
+      className="py-16 md:py-24 bg-white dark:bg-gray-900 transition-colors duration-500"
+      ref={ref}
+    >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -110,10 +113,13 @@ const Education = () => {
             >
               <GraduationCap className="text-white" size={24} />
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 dark:text-white mb-4 md:mb-6 tracking-tight px-4"
-              style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
+              style={{
+                fontFamily:
+                  '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              }}
             >
               Education
             </motion.h2>
@@ -213,7 +219,10 @@ const Education = () => {
                         }
                         transition={{ duration: 0.6, delay: index * 0.2 + 1.1 }}
                         className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3 leading-tight"
-                        style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
+                        style={{
+                          fontFamily:
+                            '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                        }}
                       >
                         {item.degree}
                       </motion.h3>
@@ -221,7 +230,11 @@ const Education = () => {
                       {/* Institution */}
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        animate={
+                          isInView
+                            ? { opacity: 1, y: 0 }
+                            : { opacity: 0, y: 20 }
+                        }
                         transition={{ duration: 0.6, delay: index * 0.2 + 1.2 }}
                         className="flex items-center gap-2 text-gray-600 dark:text-gray-300 mb-2 md:mb-3"
                       >
@@ -278,7 +291,9 @@ const Education = () => {
                         }
                         transition={{ duration: 0.6, delay: index * 0.2 + 1.5 }}
                       >
-                        <h4 className="text-xs md:text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Key Coursework:</h4>
+                        <h4 className="text-xs md:text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                          Key Coursework:
+                        </h4>
                         <div className="flex flex-wrap gap-1.5 md:gap-2">
                           {item.coursework.map((course, courseIndex) => (
                             <motion.span
@@ -293,7 +308,7 @@ const Education = () => {
                                 duration: 0.4,
                                 delay: index * 0.2 + 1.6 + courseIndex * 0.1,
                               }}
-                             className="px-2 md:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-full border border-gray-200 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
+                              className="px-2 md:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-full border border-gray-200 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
                             >
                               {course}
                             </motion.span>

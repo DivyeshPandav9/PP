@@ -1,7 +1,7 @@
-import { Code, Palette, Users, Zap } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { Code, Palette, Users, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const About = () => {
   const ref = useRef(null);
@@ -11,23 +11,24 @@ const About = () => {
     {
       icon: <Code className="text-blue-600 dark:text-blue-400" size={24} />,
       title: "Clean Code",
-      description: "Writing maintainable, scalable code following best practices"
+      description:
+        "Writing maintainable, scalable code following best practices",
     },
     {
       icon: <Palette className="text-cyan-600 dark:text-cyan-400" size={24} />,
       title: "UI/UX Design",
-      description: "Creating intuitive and beautiful user interfaces"
+      description: "Creating intuitive and beautiful user interfaces",
     },
     {
       icon: <Users className="text-green-600 dark:text-green-400" size={24} />,
       title: "Collaboration",
-      description: "Working effectively with cross-functional teams"
+      description: "Working effectively with cross-functional teams",
     },
     {
       icon: <Zap className="text-yellow-600 dark:text-yellow-400" size={24} />,
       title: "Performance",
-      description: "Optimizing applications for speed and efficiency"
-    }
+      description: "Optimizing applications for speed and efficiency",
+    },
   ];
 
   const containerVariants = {
@@ -36,9 +37,9 @@ const About = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -48,9 +49,9 @@ const About = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const cardVariants = {
@@ -61,13 +62,17 @@ const About = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-500" ref={ref}>
+    <section
+      id="about"
+      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-500"
+      ref={ref}
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -93,10 +98,13 @@ const About = () => {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              <motion.div variants={itemVariants} className="prose prose-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+              <motion.div
+                variants={itemVariants}
+                className="prose prose-lg text-gray-600 dark:text-gray-300 leading-relaxed"
+              >
                 <motion.p variants={itemVariants} className="mb-6">
-                  Hi! I'm Divyesh Pandav, a passionate Frontend Developer with
-                  over 5 years of experience creating digital experiences that
+                  Hi! I'm Divyesh Pandav, a passionate Software Developer with
+                  over 2 years of experience creating digital experiences that
                   users love. I specialize in React, TypeScript, and modern CSS
                   frameworks to build responsive, accessible web applications.
                 </motion.p>
